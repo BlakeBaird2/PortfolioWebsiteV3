@@ -110,8 +110,8 @@ export default async function ProjectDetailPage({
                 project.imageFit === "cover"
                   ? "object-cover"
                   : project.imageFit === "contain-tight"
-                  ? "object-contain p-3 md:p-6"
-                  : "object-contain p-10 md:p-16"
+                  ? "object-contain p-0 md:p-6 scale-110 md:scale-100"
+                  : "object-contain p-4 md:p-16"
               }
               sizes="(max-width: 768px) 100vw, 80vw"
               quality={100}

@@ -9,8 +9,8 @@ export const metadata = {
 export default function ProjectsPage() {
   return (
     <section>
-      <div className="max-w-container mx-auto px-6 md:px-margin-safe py-stack-lg md:py-section">
-        <header className="mb-stack-lg fade-up">
+      <div className="max-w-container mx-auto px-6 md:px-margin-safe pt-stack-md pb-stack-lg md:py-section">
+        <header className="mb-stack-md md:mb-stack-lg fade-up">
           <h1 className="font-serif text-headline-lg md:text-headline-xl text-ink">
             Selected Work
           </h1>

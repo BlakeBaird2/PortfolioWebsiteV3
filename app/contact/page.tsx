@@ -8,7 +8,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <section>
-      <div className="max-w-container mx-auto px-6 md:px-margin-safe py-stack-lg md:py-section">
+      <div className="max-w-container mx-auto px-6 md:px-margin-safe pt-stack-md pb-stack-lg md:py-section">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-stack-md lg:gap-stack-lg items-start">
           {/* Left: Heading + contact info */}
           <div className="lg:col-span-5 fade-up">

@@ -64,13 +64,13 @@ export default function Navigation() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden flex flex-col gap-1.5 p-2 -mr-2"
+            className="md:hidden flex flex-col gap-1.5 p-2 mr-1 -mt-2"
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
           >
             <span
               className={`block w-6 h-px bg-ink transition-transform duration-300 ${
-                mobileOpen ? "rotate-45 translate-y-2" : ""
+                mobileOpen ? "rotate-45 translate-y-[7px]" : ""
               }`}
             />
             <span
@@ -80,7 +80,7 @@ export default function Navigation() {
             />
             <span
               className={`block w-6 h-px bg-ink transition-transform duration-300 ${
-                mobileOpen ? "-rotate-45 -translate-y-2" : ""
+                mobileOpen ? "-rotate-45 -translate-y-[7px]" : ""
               }`}
             />
           </button>
@@ -93,13 +93,14 @@ export default function Navigation() {
           mobileOpen ? "max-h-96 border-b border-rule-soft" : "max-h-0"
         }`}
       >
-        <nav className="px-6 py-6 flex flex-col gap-5">
+        <nav className="px-6 pt-2 pb-6 flex flex-col gap-5">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={() => setMobileOpen(false)}
                 className={`font-serif text-2xl ${
                   isActive ? "text-terracotta" : "text-ink"
                 }`}

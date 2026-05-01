@@ -6,7 +6,7 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="border-b border-rule-soft">
-        <div className="max-w-container mx-auto px-6 md:px-margin-safe py-stack-lg md:py-section">
+        <div className="max-w-container mx-auto px-8 md:px-margin-safe py-stack-md md:py-section">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-stack-md items-center">
             {/* Heading + intro */}
             <div className="md:col-span-8 lg:col-span-8">
@@ -14,23 +14,23 @@ export default function Home() {
                 I build thoughtful digital experiences.
               </h1>
 
-              <p className="mt-stack-md max-w-xl text-body-lg text-ink-soft fade-up-delay-1">
+              <p className="mt-4 md:mt-stack-md max-w-xl text-body-lg text-ink-soft fade-up-delay-1">
                 Software engineer focused on creating intentional, deeply
                 considered solutions that bridge the gap between complex systems
                 and human needs. BYU Information Systems student building things
                 that matter.
               </p>
 
-              <div className="mt-stack-md fade-up-delay-2">
-                <Link href="/projects" className="btn-outline">
+              <div className="mt-4 md:mt-stack-md fade-up-delay-2">
+                <Link href="/projects" className="btn-outline py-2.5 px-5 md:py-3 md:px-6">
                   View My Work
                 </Link>
               </div>
             </div>
 
             {/* Portrait */}
-            <div className="md:col-span-4 lg:col-span-4 fade-up-delay-3 order-first md:order-last">
-              <div className="aspect-[4/5] relative bg-parchment-muted overflow-hidden rounded-md">
+            <div className="md:col-span-4 lg:col-span-4 fade-up-delay-3 mt-4 md:mt-0">
+              <div className="aspect-[4/5] relative bg-parchment-muted overflow-hidden rounded-[2rem] md:rounded-md">
                 <Image
                   src="/images/profile2.png"
                   alt="Blake Baird"
@@ -47,7 +47,7 @@ export default function Home() {
 
       {/* ABOUT */}
       <section className="bg-parchment-soft">
-        <div className="max-w-container mx-auto px-6 md:px-margin-safe py-stack-lg md:py-section">
+        <div className="max-w-container mx-auto px-8 md:px-margin-safe py-stack-lg md:py-section">
           <h2 className="font-serif text-headline-md md:text-headline-lg text-ink mb-stack-md">
             About Me
           </h2>
@@ -104,7 +104,7 @@ export default function Home() {
 
           {/* Discipline pillars */}
           <div className="mt-stack-lg pt-stack-md border-t border-rule-soft">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-stack-md">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-stack-md">
               <div>
                 <div className="label text-ink mb-3">Full Stack Developer</div>
                 <p className="text-body-md text-ink-soft">
