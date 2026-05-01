@@ -18,6 +18,26 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "byu-enterprise-solutions",
+    title: "BYU Enterprise Solutions Group",
+    description:
+      "Summer internship supporting BYU's campus-wide Workday integration — building reports and helping drive the university-wide ERP migration.",
+    tags: ["Workday", "Data & Reporting", "Enterprise Systems"],
+    role: "Technical Specialist",
+    timeline: "Apr 2026 — Present",
+    imageUrl: "/images/Workday Logo.avif",
+    imageFit: "contain",
+    imageBg: "#ffffff",
+    overview:
+      "BYU's Enterprise Solutions Group oversees the university's adoption and integration of Workday, a campus-wide ERP platform affecting thousands of students, faculty, and staff. As a Technical Specialist, I'm embedded in the team helping drive the migration forward — integrating Workday across departments, building custom reports, and supporting data initiatives that keep the transition on track.",
+    challenge:
+      "Campus-wide ERP migrations are complex by nature — every department has unique workflows, data structures, and reporting needs. The challenge is translating those needs into clean Workday configurations and reports that actually hold up at scale across a large institution.",
+    approach:
+      "I'm working closely with the Enterprise Solutions team to understand department-specific requirements, build and validate reports, and support integration work that helps BYU fully realize the capabilities of the Workday platform. The role sits at the intersection of technical implementation and data analysis.",
+    outcome:
+      "Still early in the role, but actively contributing to integration and reporting efforts that support BYU's ongoing campus-wide Workday migration.",
+  },
+  {
     slug: "jt-swppp",
     title: "JT SWPPP",
     description:
@@ -34,9 +54,9 @@ export const projects: Project[] = [
     challenge:
       "General contractors needed a way to monitor compliance across active job sites without sending personnel to each location. The existing process relied on manual inspections and paper documentation, which created compliance gaps and slowed down audits. The platform had to support live camera feeds, role-based access, and handle multiple contractors and sites simultaneously.",
     approach:
-      "As the founding developer, I built the core client portal — including live camera feed integration, role-based access controls, and a centralized compliance documentation hub. I served as the technical bridge between the co-founders and an external consulting engineering team, translating executive vision into architecture decisions and clear development direction.",
+      "As the founding developer, I built the core client portal — including a timelapse feature pulling from on-site cameras, role-based access controls, and a centralized compliance documentation hub. I served as the technical bridge between the co-founders and an external consulting engineering team, translating executive vision into architecture decisions and clear development direction.",
     outcome:
-      "The platform is approaching launch with a working portal that lets contractors monitor live feeds, access compliance documents, and manage permissions across job sites. The architecture is scaling cleanly as new contractors are onboarded, and the documentation flow has cut audit prep time substantially.",
+      "The platform is still approaching launch, with a working portal that lets contractors monitor live feeds, access compliance documents, and manage permissions across job sites. The architecture was built to scale cleanly as new contractors are onboarded, and the documentation flow significantly reduced audit prep time during development.",
   },
   {
     slug: "byu-case-competition",
@@ -85,7 +105,7 @@ export const projects: Project[] = [
     slug: "ella-rises",
     title: "Ella Rises",
     description:
-      "Full-stack web application and admin portal for a nonprofit, deployed on AWS with a SQL database backend.",
+      "Full-stack web application and admin portal built as a university capstone project around a real-world challenge presented by a nonprofit.",
     tags: ["Full Stack", "AWS", "Nonprofit"],
     role: "Lead Developer",
     timeline: "2024",
@@ -95,13 +115,13 @@ export const projects: Project[] = [
     imageFit: "contain",
     imageBg: "#ffd8d1",
     overview:
-      "Ella Rises is a nonprofit focused on empowering young women through events and mentorship. They needed a web platform that could host their public-facing presence and give administrators a way to track participant survey data, measure event impact, and make decisions about future programming.",
+      "Ella Rises is a nonprofit focused on empowering young women through events and mentorship. For our university INTEX capstone project, our team built a web platform around the real-world challenge Ella Rises presented — giving administrators a way to track participant survey data, measure event impact, and make decisions about future programming.",
     challenge:
-      "The organization was running on spreadsheets and manual workflows. They needed a database-backed platform that could handle participant data securely, surface meaningful dashboard metrics, and remain easy enough for non-technical administrators to maintain over time. Budget was tight, so the deployment had to be efficient.",
+      "The organization was running on spreadsheets and manual workflows. The capstone problem called for a database-backed platform that could handle participant data securely, surface meaningful dashboard metrics, and remain easy enough for non-technical administrators to maintain over time. Budget constraints were a real factor, so the deployment architecture had to be cost-efficient.",
     approach:
-      "I designed a SQL database hosted on AWS RDS and deployed the web application via Elastic Beanstalk for cost-effective scaling. The platform separates a clean public site from a secure admin portal, with dashboard metrics pulled directly from participant surveys. I worked closely with the nonprofit's leadership to make sure the admin experience matched their actual workflow.",
+      "I designed a SQL database hosted on AWS RDS and deployed the web application via Elastic Beanstalk for cost-effective scaling. The platform separates a clean public site from a secure admin portal, with dashboard metrics pulled directly from participant surveys. We shaped the admin experience around the actual workflows Ella Rises described during the project.",
     outcome:
-      "Ella Rises now has a live platform with administrative tooling that lets them track which activities drive the most participant engagement. The dashboard data is actively shaping how they plan future events.",
+      "The capstone delivered a fully functional platform with an admin portal and dashboard tooling built around the participant tracking needs Ella Rises presented. The project demonstrated how a lean AWS deployment could support a nonprofit's data and reporting needs without requiring a large infrastructure budget.",
   },
 ];
 

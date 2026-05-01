@@ -29,7 +29,7 @@ export default function Home() {
             </div>
 
             {/* Portrait */}
-            <div className="md:col-span-4 lg:col-span-4 fade-up-delay-3">
+            <div className="md:col-span-4 lg:col-span-4 fade-up-delay-3 order-first md:order-last">
               <div className="aspect-[4/5] relative bg-parchment-muted overflow-hidden rounded-md">
                 <Image
                   src="/images/profile2.png"

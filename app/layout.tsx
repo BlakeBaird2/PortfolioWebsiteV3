@@ -22,7 +22,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Blake Baird — Software Engineer",
   description:
-    "Software engineer focused on creating intentional, deeply considered interfaces that bridge complex systems and human needs.",
+    "Information Systems Student focused on creating intentional, deeply considered interfaces that bridge complex systems and human needs.",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
