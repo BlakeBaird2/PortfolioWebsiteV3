@@ -46,7 +46,7 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-      <section className="bg-parchment-soft border-b border-rule-soft">
+      <section className="bg-parchment-soft">
         <div className="max-w-container mx-auto px-6 md:px-margin-safe py-stack-lg md:py-section">
           <h2 className="font-serif text-headline-md md:text-headline-lg text-ink mb-stack-md">
             About Me

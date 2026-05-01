@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-inverse-surface text-inverse-on-surface mt-section">
+    <footer className="bg-inverse-surface text-inverse-on-surface">
       <div className="max-w-container mx-auto px-6 md:px-margin-safe py-10">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <span className="font-serif text-2xl italic tracking-tight text-inverse-on-surface">
