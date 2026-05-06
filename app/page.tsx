@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="border-b border-rule-soft">
+      <section className="md:border-b border-rule-soft">
         <div className="max-w-container mx-auto px-8 md:px-margin-safe pt-stack-md pb-0 md:py-section">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-stack-md items-center">
             {/* Heading + intro */}

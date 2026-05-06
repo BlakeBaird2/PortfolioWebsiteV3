@@ -93,7 +93,7 @@ export default function Navigation() {
           mobileOpen ? "max-h-96 border-b border-rule-soft" : "max-h-0"
         }`}
       >
-        <nav className="px-6 pt-2 pb-6 flex flex-col gap-5">
+        <nav className="px-6 pt-4 pb-8 flex flex-col gap-8">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (

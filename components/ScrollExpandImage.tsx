@@ -30,7 +30,7 @@ export default function ScrollExpandImage() {
         src="/images/profile2.png"
         alt="Blake Baird"
         fill
-        className="object-cover"
+        className="object-cover object-[center_25%]"
         sizes="100vw"
         priority
       />
