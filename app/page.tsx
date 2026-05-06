@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import ScrollExpandImage from "@/components/ScrollExpandImage";
 
 export default function Home() {
   return (
     <>
       {/* HERO */}
       <section className="border-b border-rule-soft">
-        <div className="max-w-container mx-auto px-8 md:px-margin-safe py-stack-md md:py-section">
+        <div className="max-w-container mx-auto px-8 md:px-margin-safe pt-stack-md pb-0 md:py-section">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-stack-md items-center">
             {/* Heading + intro */}
             <div className="md:col-span-8 lg:col-span-8">
@@ -28,26 +29,31 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Portrait */}
-            <div className="md:col-span-4 lg:col-span-4 fade-up-delay-3 mt-4 md:mt-0">
-              <div className="aspect-[4/5] relative bg-parchment-muted overflow-hidden rounded-[2rem] md:rounded-md">
+            {/* Portrait — desktop only (static) */}
+            <div className="hidden md:block md:col-span-4 lg:col-span-4 fade-up-delay-3">
+              <div className="aspect-[4/5] relative bg-parchment-muted overflow-hidden rounded-md">
                 <Image
                   src="/images/profile2.png"
                   alt="Blake Baird"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 40vw"
+                  sizes="40vw"
                   priority
                 />
               </div>
             </div>
+          </div>
+
+          {/* Portrait — mobile only (scroll-expand animation) */}
+          <div className="md:hidden mt-14 fade-up-delay-3">
+            <ScrollExpandImage />
           </div>
         </div>
       </section>
 
       {/* ABOUT */}
       <section className="bg-parchment-soft">
-        <div className="max-w-container mx-auto px-8 md:px-margin-safe py-stack-lg md:py-section">
+        <div className="max-w-container mx-auto px-8 md:px-margin-safe pt-section pb-stack-lg md:py-section">
           <h2 className="font-serif text-headline-md md:text-headline-lg text-ink mb-stack-md">
             About Me
           </h2>
