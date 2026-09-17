@@ -9,12 +9,16 @@ const nextConfig = {
     ],
   },
   async rewrites() {
-    return [
-      {
-        source: '/',
-        destination: '/ProfessionalPortfolio.html',
-      },
-    ];
+    return {
+      beforeFiles: [
+        {
+          source: '/',
+          destination: '/ProfessionalPortfolio.html',
+        },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
   },
 };
 
