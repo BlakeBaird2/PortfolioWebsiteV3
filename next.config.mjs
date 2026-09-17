@@ -8,6 +8,14 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/',
+        destination: '/ProfessionalPortfolio.html',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
