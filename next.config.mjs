@@ -8,6 +8,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      { source: '/about', destination: '/', permanent: true },
+      { source: '/projects', destination: '/', permanent: true },
+      { source: '/projects/:slug*', destination: '/', permanent: true },
+      { source: '/resume', destination: '/', permanent: true },
+      { source: '/contact', destination: '/', permanent: true },
+    ];
+  },
   async rewrites() {
     return {
       beforeFiles: [

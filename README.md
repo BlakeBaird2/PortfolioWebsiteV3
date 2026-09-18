@@ -1,6 +1,8 @@
 # Blake Baird — Portfolio
 
-Editorial portfolio site built with Next.js 15, TypeScript, and Tailwind CSS. Design system based on the "Editorial Portfolio" spec (Newsreader serif + Manrope sans, warm parchment background, terracotta accent).
+The live site (`/`) is a self-contained prototype at `public/ProfessionalPortfolio.html`, served in place of a Next.js page via a rewrite in `next.config.mjs`. It's a single-page app — About/Work/Resume/Contact are all client-side state within that one file, not separate routes.
+
+Everything else in this repo is Next.js 15 + TypeScript + Tailwind, but its only real job today is the backend: the `/api/contact` route (Resend) that the live prototype's contact form posts to, plus `next.config.mjs` redirecting the old pre-redesign routes (`/about`, `/projects`, `/resume`, `/contact`) to `/` so old links and search results land somewhere real instead of showing stale content.
 
 ## Setup
 
@@ -17,40 +19,32 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ```
 app/
-  layout.tsx          # Root layout with fonts, nav, footer
-  page.tsx            # Home (hero + about + disciplines)
-  globals.css         # Design tokens and component styles
-  projects/
-    page.tsx          # Projects index
-    [slug]/page.tsx   # Dynamic project detail
-  resume/page.tsx     # Resume page
-  contact/page.tsx    # Contact page
-  api/contact/route.ts  # Contact form API (uses Resend)
-components/
-  Navigation.tsx      # Sticky nav with mobile menu
-  Footer.tsx          # Dark footer
-  ContactForm.tsx     # Client-side form with success/error states
-lib/
-  projects.ts         # Project data — single source of truth
+  layout.tsx             # Root layout — fonts + metadata only, no nav/footer
+  not-found.tsx           # 404 page
+  opengraph-image.tsx     # OG image generation
+  api/contact/route.ts    # Contact form API (uses Resend), called by the live prototype
+next.config.mjs           # Rewrites "/" to the static prototype; redirects old routes to "/"
+public/
+  ProfessionalPortfolio.html  # The actual live site
+  images/, assets/            # Images and the résumé PDF it references
 ```
 
-## Editing content
+## Editing the live site
 
-- **Projects:** edit `lib/projects.ts` — adding/removing entries automatically updates the index page and creates new detail routes
-- **Resume:** edit `app/resume/page.tsx` directly
-- **Hero/About:** edit `app/page.tsx` directly
-- **Contact info:** edit `app/contact/page.tsx` and `components/Footer.tsx`
+`public/ProfessionalPortfolio.html` is not typical source you hand-edit freely — it's a single JSON-embedded template string inside a self-unpacking bundle (fonts/images are base64-encoded in a manifest elsewhere in the same file). Content (bio copy, project write-ups, nav, résumé, etc.) all lives inside that one embedded HTML/CSS/JS template.
 
 ## Contact form setup (Resend)
 
 1. Sign up at [resend.com](https://resend.com) — free tier covers 3,000 emails/month
 2. Create an API key from the dashboard
-3. Add it to `.env.local`:
+3. Add it to `.env.local` (local dev) and to your Vercel project's Environment Variables (production):
    ```
    RESEND_API_KEY=re_xxxxxxxxxxxx
    ```
-4. (Recommended) Verify a domain so emails come from `you@yourdomain.com` instead of `onboarding@resend.dev`. Until then, you can only send to your own email address.
+4. (Recommended) Verify a domain so emails come from `you@yourdomain.com` instead of `onboarding@resend.dev`. Until then, you can only send to the email address your Resend account itself uses.
 5. In `app/api/contact/route.ts`, update the `from` field to use your verified domain
+
+The route also has a honeypot check (a hidden `company` field the live form includes) to silently drop basic bot spam without sending an email or touching the Resend quota.
 
 ## Deploy
 
@@ -61,19 +55,8 @@ The site is ready to deploy to Vercel:
 3. Add `RESEND_API_KEY` as an environment variable
 4. Deploy
 
-## Design tokens
-
-The full design system is in `tailwind.config.ts`. Key tokens:
-
-- **Colors:** `parchment` (#faf9f7), `ink` (#1a1c1b), `ink-soft` (#444748), `terracotta` (#9a452c), `rule-soft` (#e3e2e0)
-- **Typography:** Newsreader serif for headlines, Manrope sans for body
-- **Spacing:** 8px unit base — `stack-sm` (16px), `stack-md` (40px), `stack-lg` (80px), `section` (120px)
-- **Container:** 1280px max-width, 64px safe margin
-
 ## Tech
 
-- Next.js 15 (App Router, React Server Components)
-- TypeScript
-- Tailwind CSS
+- Next.js 15 (App Router) — routing/redirects + the `/api/contact` route
 - Resend (contact form)
-- Google Fonts via `next/font`
+- The live page itself is plain HTML/CSS/vanilla JS, not React
