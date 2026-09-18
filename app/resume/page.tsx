@@ -18,9 +18,8 @@ export default function ResumePage() {
             </p>
           </div>
           <a
-            href="https://blakebaird.dev/assets/Blake%20Baird's%20Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/assets/blake-baird-resume.pdf"
+            download="Blake-Baird-Resume.pdf"
             className="btn-outline self-start md:self-auto"
           >
             Download PDF
