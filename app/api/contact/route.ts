@@ -10,7 +10,14 @@ function getResend() {
 
 export async function POST(request: Request) {
   try {
-    const { name, email, message } = await request.json();
+    const { name, email, message, company } = await request.json();
+
+    // Honeypot: real visitors never see or fill this field. A bot that
+    // blindly fills every input in the form will trip it. Pretend success
+    // without actually sending anything.
+    if (company) {
+      return NextResponse.json({ success: true });
+    }
 
     // Basic validation
     if (!name || !email || !message) {

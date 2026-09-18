@@ -11,6 +11,7 @@ export default function ContactForm() {
     name: "",
     email: "",
     message: "",
+    company: "",
   });
 
   const handleChange = (
@@ -38,7 +39,7 @@ export default function ContactForm() {
       }
 
       setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", message: "", company: "" });
     } catch (err) {
       setStatus("error");
       setErrorMessage(
@@ -70,6 +71,23 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-stack-md">
+      {/* Honeypot — hidden from real visitors, bots that auto-fill every field trip it */}
+      <div
+        style={{ position: "absolute", left: "-9999px", top: "auto" }}
+        aria-hidden="true"
+      >
+        <label htmlFor="company">Company</label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+          value={formData.company}
+          onChange={handleChange}
+        />
+      </div>
+
       <div>
         <label htmlFor="name" className="label text-ink block mb-2">
           Name
